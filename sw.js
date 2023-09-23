@@ -14,12 +14,7 @@ let filesToCache = [
 ];
 caches.open("pwa-assets")
 .then(cache => {
-  filesToCache.forEach((element) => {
-    fetch(element).then((data) => {
-      let response = new Response(data.blob())
-      cache.put("/"+element,response)
-    })
-  });
+  cache.addAll(filesToCache)
 });
 
 self.addEventListener("install", (event) => {
