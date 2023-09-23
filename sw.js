@@ -1,20 +1,24 @@
 var current_cache = "pwa-assets";
 let filesToCache = [
-    "/",
-    "/manifest.json",
-    "/icon.png",
-    "/old.html",
-    "/cursortrail.png",
-    "/cursor.png",
-    "/bgm.mp3",
-    "/system.woff",
-    "/localforage.min.js",
-    "/empty_channel.png",
-    "/installer_channel.png"
+    "",
+    "manifest.json",
+    "icon.png",
+    "old.html",
+    "cursortrail.png",
+    "cursor.png",
+    "bgm.mp3",
+    "system.woff",
+    "localforage.min.js",
+    "empty_channel.png",
+    "installer_channel.png"
 ];
 caches.open("pwa-assets")
 .then(cache => {
-  cache.addAll(filesToCache)
+  filesToCache.forEach((element) => {
+    fetch("/HCHL/"+element).then((response) => {
+      cache.put("/"+element,response)
+    })
+  });
 });
 
 self.addEventListener("install", (event) => {
