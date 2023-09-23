@@ -1,16 +1,16 @@
 var current_cache = "pwa-assets";
 let filesToCache = [
-    "/",
-    "/manifest.json",
-    "/icon.png",
-    "/old.html",
-    "/cursortrail.png",
-    "/cursor.png",
-    "/bgm.mp3",
-    "/system.woff",
-    "/localforage.min.js",
-    "/empty_channel.png",
-    "/installer_channel.png"
+    `${self.location.href}`,
+    `${self.location.href}manifest.json`,
+    `${self.location.href}icon.png`,
+    `${self.location.href}old.html`,
+    `${self.location.href}cursortrail.png`,
+    `${self.location.href}cursor.png`,
+    `${self.location.href}bgm.mp3`,
+    `${self.location.href}system.woff`,
+    `${self.location.href}localforage.min.js`,
+    `${self.location.href}empty_channel.png`,
+    `${self.location.href}installer_channel.png`
 ];
 caches.open("pwa-assets")
 .then(cache => {
@@ -40,7 +40,7 @@ addEventListener("message", (event) => {
     if (event.data.type === "cachechange") {
       current_cache = event.data.cachename
       if (current_cache !== "pwa-assets") {
-        event.source.navigate("index.html")
+        event.source.navigate(`${self.location.href}index.html/`)
       }
     }
   }
