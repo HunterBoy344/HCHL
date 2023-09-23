@@ -21,7 +21,7 @@
           }
           @font-face{
             font-family: "Wii Font";
-            src: url("/system.woff");
+            src: url("system.woff");
           }
           *{
             color:#2c3331;
@@ -617,7 +617,7 @@
             }
           });
           console.log("Caches cleared.")
-          window.location.href="/"
+          window.location.href=""
         }
         
         async function setLaunch() {
@@ -679,7 +679,7 @@
         async function updateLauncher() {
           caches.delete("pwa-assets");
           SWRegistration.unregister()
-          window.location.href="/"
+          window.location.href=""
         }
         
         async function loadHTML(cachename) {
