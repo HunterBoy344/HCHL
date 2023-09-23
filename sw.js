@@ -15,7 +15,7 @@ let filesToCache = [
 caches.open("pwa-assets")
 .then(cache => {
   filesToCache.forEach((element) => {
-    fetch("/HCHL/"+element).then((response) => {
+    fetch(element).then((response) => {
       cache.put("/"+element,response)
     })
   });
