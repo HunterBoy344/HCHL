@@ -546,7 +546,7 @@
                       console.log("WOW")
                       launchURL = "index.html"
                     }
-                    if (d.includes(`${window.location.href.replace( "/#", "/" )}hchl_channel.png`) || d.includes(`${window.location.href.replace( "/#", "/" )}hchl_channel.gif`)) {
+                    if (d.includes(`hchl_channel.png`) || d.includes(`hchl_channel.gif`)) {
                       console.log("PERFECT")
                       localforage.getItem("hchl_"+name).then(function(value) {
                           // This code runs once the value has been loaded
@@ -631,7 +631,7 @@
                     cache.keys().then((keys) => {
                       for (let i = 0; i < keys.length; i++) {
                       //keys.forEach((request, index, array) => {
-                        if (keys[i].url == `${window.location.href}index.html`) {
+                        if (keys[i].url == `index.html`) {
                           console.log("index.html")
                           return "index.html"
                         } else if (!launchURL) {
