@@ -617,7 +617,7 @@
             }
           });
           console.log("Caches cleared.")
-          window.location.href=""
+          window.location.reload()
         }
         
         async function setLaunch() {
@@ -679,7 +679,7 @@
         async function updateLauncher() {
           caches.delete("pwa-assets");
           SWRegistration.unregister()
-          window.location.href=""
+          window.location.reload()
         }
         
         async function loadHTML(cachename) {
