@@ -40,6 +40,7 @@ addEventListener("message", (event) => {
     if (event.data.type === "cachechange") {
       current_cache = event.data.cachename
       if (current_cache !== "pwa-assets") {
+        alert(self.location.href)
         event.source.navigate(`${self.location.href}index.html/`)
       }
     }
